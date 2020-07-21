@@ -49,4 +49,3 @@ packages/*/*.node
 packages/*/*.mjs
 packages/*/*.d.ts
 packages/*/*.js
-tests/*.d.ts
