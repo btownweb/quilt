@@ -70,10 +70,10 @@ module.exports = function (plop) {
       },
       {
         type: 'modify',
-        path: 'packages/tsconfig.json',
+        path: 'tsconfig.json',
         transform: (file, {name}) => {
           const tsConfig = JSON.parse(file);
-          tsConfig.references.push({path: `./${name}`});
+          tsConfig.references.push({path: `./packages/${name}`});
           tsConfig.references.sort(({path: firstPath}, {path: secondPath}) =>
             firstPath.localeCompare(secondPath),
           );
