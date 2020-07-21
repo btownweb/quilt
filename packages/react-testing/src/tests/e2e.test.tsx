@@ -30,7 +30,6 @@ describe('@shopify/react-testing', () => {
 
   it('can output structured debug strings', () => {
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         <span>hi</span>
       </div>,
@@ -44,7 +43,6 @@ describe('@shopify/react-testing', () => {
 
   it('can find dom components', () => {
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         <span>hi</span>
       </div>,
@@ -54,10 +52,8 @@ describe('@shopify/react-testing', () => {
 
   it('can compare text when there are nulls in the vdom', () => {
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         {null}
-        {/* eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers */}
         <span>{null}hi</span>
       </div>,
     );
@@ -66,7 +62,6 @@ describe('@shopify/react-testing', () => {
 
   it('can findAll dom components', () => {
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         <span>hi</span>
         <span>howdy</span>
@@ -84,7 +79,6 @@ describe('@shopify/react-testing', () => {
     }
 
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         <Message>hi</Message>
       </div>,
@@ -97,7 +91,6 @@ describe('@shopify/react-testing', () => {
       return <span>{children}</span>;
     }
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         <Message>hi</Message>
         <Message>howdy</Message>
@@ -118,7 +111,6 @@ describe('@shopify/react-testing', () => {
     }
 
     const wrapper = mount(
-      // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
       <div>
         <Message>hi</Message>
       </div>,
@@ -159,7 +151,6 @@ describe('@shopify/react-testing', () => {
       const [counter, setCounter] = useState(0);
 
       return (
-        // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
         <div>
           <Message>{counter}</Message>
           <button type="button" onClick={() => setCounter(count => count + 1)}>
@@ -183,7 +174,6 @@ describe('@shopify/react-testing', () => {
         useEffect(() => setCounter(100), []);
 
         return (
-          // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
           <div>
             <Message>{counter}</Message>
             {children}
@@ -207,7 +197,6 @@ describe('@shopify/react-testing', () => {
         useEffect(() => setCounter(value), [value]);
 
         return (
-          // eslint-disable-next-line @shopify/jsx-prefer-fragment-wrappers
           <div>
             <Message>{counter}</Message>
             {children}
