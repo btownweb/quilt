@@ -18,6 +18,10 @@ matrix:
         - yarn build
         - yarn type-check
         - yarn test:ci "(address|react-server)"
+      cache:
+        directories:
+          - .sewing-kit
+          - packages/*/build
     - <<: *node_container
       name: 'Node - unit tests'
       script:
