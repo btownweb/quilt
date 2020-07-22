@@ -16,7 +16,7 @@ export default createWorkspace(workspace => {
           projects: [
             ...config.projects,
             {
-              ...config.projects[0],
+              ...(config.projects[0] as any),
               displayName: 'quilt',
               rootDir: 'tests',
             },
