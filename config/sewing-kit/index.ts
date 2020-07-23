@@ -8,6 +8,7 @@ import {react} from '@sewing-kit/plugin-react';
 import {javascript} from '@sewing-kit/plugin-javascript';
 import {typescript} from '@sewing-kit/plugin-typescript';
 import {buildFlexibleOutputs} from '@sewing-kit/plugin-package-flexible-outputs';
+import {} from '@sewing-kit/plugin-jest';
 
 function addLegacyDecoratorSupport(config) {
   return {
@@ -28,14 +29,14 @@ function addLegacyDecoratorSupport(config) {
   };
 }
 
-export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
+export function quiltPackage({jestEnv = 'jsdom', useReact = true} = {}) {
   return createComposedProjectPlugin<Package>('Quilt.Package', [
     javascript(),
     typescript(),
-    react(),
+    useReact && react(),
     buildFlexibleOutputs({
-      esnext: !binaryOnly,
-      esmodules: !binaryOnly,
+      esnext: false,
+      esmodules: false,
     }),
     createProjectBuildPlugin('Quilt.PackageBuild', ({hooks}) => {
       hooks.target.hook(({hooks}) => {
