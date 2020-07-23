@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -d .package-build-cache ]
+if [ -n "$(ls -A .package-build-cache)" ]
 then
     for p in .package-build-cache/*/build; do
         mkdir -p packages/${p:21}
