@@ -23,9 +23,9 @@ matrix:
           - .sewing-kit
           - .package-build-cache
       before-cache:
-        - ./scripts/copy_build_files_to_cache.sh
+        - ./scripts/copy_build_to_cache.sh
       before-script:
-        - ./scripts/copy_cache_files_to_build.sh
+        - ./scripts/copy_cache_to_build.sh
     - <<: *node_container
       name: 'Node - unit tests'
       script:
