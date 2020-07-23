@@ -21,7 +21,11 @@ matrix:
       cache:
         directories:
           - .sewing-kit
-          - packages/*/build
+          - .package-build-cache
+      before-cache:
+        - ./scripts/copy_build_files_to_cache.sh
+      before-script:
+        - ./scripts/copy_cache_files_to_build.sh
     - <<: *node_container
       name: 'Node - unit tests'
       script:
